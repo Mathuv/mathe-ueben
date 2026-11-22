@@ -1,0 +1,145 @@
+/* Styles for the practice page. */
+:root { --blue: #1f5a96; --green: #1e8a4c; --red: #c0392b; --bg: #f3f6fa; --card: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Helvetica, Arial, sans-serif; background: var(--bg); color: #1b2733; font-size: 19px; line-height: 1.45; }
+header { background: var(--blue); color: #fff; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+header h1 { font-size: 22px; margin: 0; }
+.lang button { background: transparent; color: #fff; border: 1.5px solid #fff; border-radius: 6px; padding: 4px 12px; margin-left: 4px; font-size: 15px; cursor: pointer; }
+.lang button.on { background: #fff; color: var(--blue); font-weight: bold; }
+main { max-width: 860px; margin: 0 auto; padding: 18px; }
+.en { display: block; font-size: 0.82em; color: #5a6b7d; font-style: italic; }
+button .en, .chip .en { display: block; font-size: 0.75em; }
+.big-btn .en, .btn:not(.light) .en { color: rgba(255, 255, 255, 0.88); }
+h2 { color: var(--blue); margin: 26px 0 10px; font-size: 21px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.skill { background: var(--card); border: 2px solid #d6e0eb; border-radius: 12px; padding: 12px 14px; cursor: pointer; text-align: left; font-size: 17px; color: inherit; }
+.skill:hover { border-color: var(--blue); }
+.dots { margin-top: 6px; letter-spacing: 3px; color: #9fb3c8; font-size: 15px; }
+.dots b { color: var(--green); }
+.big-btn { background: var(--green); color: #fff; border: 0; border-radius: 10px; padding: 14px 22px; font-size: 20px; font-weight: bold; cursor: pointer; }
+.btn { background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 10px 20px; font-size: 18px; cursor: pointer; }
+.btn.light { background: #e3ebf4; color: var(--blue); }
+.btn.go { background: var(--green); }
+/* Use light red to mark danger without distracting the child from the practice. */
+.btn.danger { background: #fdecea; color: var(--red); border: 2px solid var(--red); display: inline-flex; align-items: center; gap: 8px; }
+/* The rule .btn:not(.light) .en makes the English line white, which is invisible on the light red. */
+.btn.danger .en { color: inherit; }
+#reset-dialog { border: 0; border-radius: 14px; padding: 22px; max-width: min(460px, 92vw); box-shadow: 0 12px 40px rgba(0,0,0,0.3); color: inherit; }
+#reset-dialog::backdrop { background: rgba(15, 30, 60, 0.45); }
+.dialog-title { font-size: 21px; font-weight: bold; color: var(--red); margin: 0 0 8px; }
+.dialog-buttons { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+/* The label lengths differ, so the buttons need a common base width. */
+.dialog-buttons .btn { flex: 1 1 180px; justify-content: center; }
+/* Give the keep button the same border thickness as the delete button. */
+.dialog-buttons .btn.light { border: 2px solid transparent; }
+/* The bin icon can make the delete button taller than the keep button. */
+.dialog-buttons .btn.danger > [aria-hidden] { line-height: 1; }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.card { background: var(--card); border-radius: 14px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 10px; flex-wrap: wrap; }
+.prompt { font-size: 21px; margin-bottom: 12px; }
+.visual { margin: 10px 0 16px; }
+.visual svg.nl { width: 100%; max-width: 700px; display: block; }
+.bigtext { font-size: 28px; font-weight: bold; letter-spacing: 0.5px; }
+.slot { display: inline-block; min-width: 60px; border-bottom: 3px solid var(--blue); color: var(--blue); text-align: center; margin: 0 8px; }
+.hl { color: var(--red); text-decoration: underline; }
+.cards span { display: inline-block; border: 2px solid #333; border-radius: 6px; padding: 4px 14px; margin: 0 4px; font-size: 26px; font-weight: bold; background: #fffbea; }
+.fields { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end; }
+.fields label { font-size: 16px; color: #46596b; }
+.fields input { display: block; font-size: 24px; width: 190px; padding: 6px 10px; border: 2px solid #9fb3c8; border-radius: 8px; margin-top: 4px; }
+.fields input.right { border-color: var(--green); background: #eaf7ef; }
+.fields input.wrong { border-color: var(--red); background: #fdecea; }
+.fields input.short { width: 120px; }
+.fields input.time { width: 170px; }
+.inrow { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.inrow input { margin-top: 0; }
+.unit { font-size: 22px; font-weight: bold; color: #46596b; }
+.visual svg.band { width: 100%; max-width: 600px; display: block; }
+.visual svg.clock { width: 220px; height: 220px; display: block; }
+.visual .en .bigtext { font-size: 22px; font-weight: normal; }
+.blocks { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.block-btn { font-size: 19px; padding: 10px 20px; border: 2px solid var(--blue); border-radius: 10px; background: #fff; color: var(--blue); cursor: pointer; }
+.block-btn.on { background: var(--blue); color: #fff; font-weight: bold; }
+.block-btn.on .en { color: rgba(255, 255, 255, 0.88); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { font-size: 22px; padding: 8px 16px; border: 2px solid #9fb3c8; border-radius: 10px; background: #fff; cursor: pointer; color: inherit; min-width: 64px; }
+.chip.sel { border-color: var(--blue); background: #dde9f6; font-weight: bold; }
+.chip:disabled { cursor: default; }
+.orderrow { min-height: 52px; border: 2px dashed #9fb3c8; border-radius: 10px; padding: 8px; margin: 10px 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.sym { font-size: 24px; font-weight: bold; color: var(--blue); }
+.actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+.hints { margin-top: 16px; }
+.hint { background: #fff6d6; border-left: 5px solid #e0a800; padding: 8px 12px; margin: 8px 0; border-radius: 4px; }
+.fb { margin-top: 16px; padding: 12px 14px; border-radius: 8px; font-size: 19px; }
+.fb.ok { background: #eaf7ef; border-left: 6px solid var(--green); }
+.fb.no { background: #fdecea; border-left: 6px solid var(--red); }
+.fb.shown { background: #eef2f7; border-left: 6px solid var(--blue); }
+.note { background: #fff6d6; border-left: 4px solid #e0a800; padding: 10px 14px; margin: 12px 0; font-size: 16px; border-radius: 4px; }
+table.gl { border-collapse: collapse; font-size: 15px; background: #fff; }
+table.gl td, table.gl th { border: 1px solid #c5d2df; padding: 4px 10px; }
+.small { font-size: 15px; color: #5a6b7d; }
+.pt td { border: 1px solid #777; padding: 4px 12px; text-align: center; }
+.pt { border-collapse: collapse; margin-top: 6px; }
+#tmr { position: relative; }
+#tmr.off { opacity: 0.6; }
+#tmr.off::after { content: ""; position: absolute; left: 8px; right: 8px; top: 50%; border-top: 2px solid #fff; transform: rotate(-30deg); }
+.speed { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: -4px 0 8px; font-size: 16px; }
+/* In DE + EN, the normal button has one line but the other buttons have two. */
+.speed .chip { font-size: 16px; padding: 4px 12px; min-width: 0; align-self: stretch; }
+.timer { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-size: 16px; color: #46596b; }
+.timer-track { flex: 1; height: 12px; background: #e3ebf4; border-radius: 6px; overflow: hidden; }
+.timer-bar { height: 100%; background: var(--green); border-radius: 6px; }
+.timer.low .timer-bar { background: #e0a800; }
+.timer.over { color: var(--red); font-weight: bold; }
+.game-card { text-align: center; }
+.game-card h2 { margin: 0 0 6px; }
+.game-stats { margin: 6px 0; font-size: 16px; }
+.game-stats .en { display: inline; margin-left: 4px; }
+.game-card .timer { margin-bottom: 8px; }
+#game-canvas { display: block; height: min(48vh, 420px); max-width: 100%; aspect-ratio: 8 / 14; margin: 0 auto; border-radius: 10px; border: 2px solid #b8cdd8; }
+.game-controls { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+.game-controls button { background: #e7d1ad; color: #51371f; border: 2px solid #b69a72; border-radius: 8px; padding: 4px 18px; font-size: 24px; line-height: 1.1; cursor: pointer; min-width: 64px; }
+.game-controls button[data-act="gturn"], .game-controls button[data-act="gdrop"] { font-size: 34px; font-weight: bold; line-height: 0.78; }
+.game-hint { margin: 6px 0; }
+#party { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; background: rgba(15, 30, 60, 0.35); cursor: pointer; }
+#party[hidden] { display: none; }
+#party-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+.party-box { position: relative; z-index: 1; background: #fff; border-radius: 22px; padding: 22px 40px; text-align: center; box-shadow: 0 12px 40px rgba(0,0,0,0.3); animation: party-pop 0.5s ease-out; max-width: 90vw; }
+.party-buddy { font-size: 96px; line-height: 1.15; display: inline-block; animation-duration: 1.1s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+.party-text { font-size: 28px; font-weight: bold; color: var(--blue); margin: 6px 0; }
+.party-sub { font-size: 18px; color: #46596b; }
+.party-close { font-size: 14px; color: #8a9bb0; margin-top: 12px; }
+@keyframes party-pop { from { transform: scale(0.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes party-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-28px); } }
+@keyframes party-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes party-wiggle { 0%, 100% { transform: rotate(-15deg); } 50% { transform: rotate(15deg); } }
+@keyframes party-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+/* Two fast taps on a button do not zoom the page on a phone. */
+html { touch-action: manipulation; }
+/* A touch screen (phone or tablet, also turned sideways) or a narrow screen: each button is at least 44 px high,
+   the touch size of Apple. A laptop does not use this rule. */
+@media (pointer: coarse), (max-width: 600px) {
+  .lang button, .btn, .speed .chip, .game-controls button { min-height: 44px; }
+}
+/* A narrow screen, such as a phone held upright. A laptop and a tablet do not use these rules. */
+@media (max-width: 600px) {
+  header { padding: 10px 12px; }
+  .lang { display: flex; gap: 6px; width: 100%; }
+  .lang button { flex: 1 1 auto; margin-left: 0; padding: 4px 6px; }
+  main { padding: 12px 10px; }
+  .card { padding: 16px 14px; }
+  /* On a phone, the label leaves too little space for all 3 buttons. */
+  .speed-label { flex-basis: 100%; }
+  #game-canvas { height: min(38vh, 420px); }
+  .game-controls button { padding: 4px 16px; }
+  .visual svg.nl { overflow: visible; }
+  .visual svg.nl text { font-size: 26px; }
+  table.gl { font-size: 14px; }
+  table.gl td, table.gl th { padding: 4px 5px; }
+  /* A long topic name such as "zusammenkleben" breaks with a hyphen, so the summary fits a 375 px screen. */
+  table.gl td { hyphens: auto; -webkit-hyphens: auto; }
+}
+/* The German speed labels need more space on the narrowest phones. */
+@media (max-width: 374px) {
+  .speed .chip { padding-inline: 3px; }
+}
